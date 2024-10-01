@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    background-color: #F4F1DE;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    padding: 3rem;
+    width: 100%;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-around;
+} 
+
+ul li {
+    display: inline-flex;
+}
