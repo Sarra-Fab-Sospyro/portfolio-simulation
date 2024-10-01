@@ -1,9 +1,17 @@
+/* Global styles */
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
-header {
+body {
+
+    background-color: #fff;
+}
+
+/* Header styles */
+
+header nav {
     background-color: #F4F1DE;
     position: fixed;
     z-index: 1;
@@ -15,8 +23,37 @@ header {
 header ul {
     display: flex;
     justify-content: space-around;
-} 
+    align-items: center;
+}
 
 ul li {
     display: inline-flex;
 }
+
+li img {
+    height: auto;
+    width: 200px;
+    border-radius: 20%;
+}
+
+li a {
+    color: #E07A5F;
+    text-decoration: none;
+    transition: letter-spacing 0.3s ease;
+}
+
+li a:hover {
+    text-decoration: underline;
+    letter-spacing: .3rem;
+}
+
+li a:active {
+    color: #ac5e49;
+}
+
+/* Main styles */
+main {
+    margin-top: 19rem;
+}
+
+/* Footer styles */
