@@ -2,6 +2,8 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    scroll-behavior: smooth;
+    font-family: serif;
 }
 
 body {
@@ -16,7 +18,7 @@ header nav {
     position: fixed;
     z-index: 1;
     top: 0;
-    padding: 3rem;
+    padding: 1rem;
     width: 100%;
 }
 
@@ -54,6 +56,38 @@ li a:active {
 /* Main styles */
 main {
     margin-top: 19rem;
+}
+
+#aboutMe {
+    display: grid;
+    margin: 2rem auto;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+    align-items: center;
+    justify-items: center;
+    background-color: #ac5e49;
+}
+
+#aboutMe p {
+    width: 100%;
+    background-color: #f4f1de;
+    padding: 2.5rem;
+    border: 1px solid #f4f1de;
+    border-radius: 20px;
+    white-space: pre-line;
+    line-height: 1.5;
+    font-size: 1.7rem;
+    align-self: center;
+    color: #E07A5F;
+    margin: 2rem;
+}
+
+#aboutMe img {
+    width: 40%;
+    height: auto;
+    border: 2px solid #ac5e49;
+    border-radius: 5%;
 }
 
 /* Footer styles */
