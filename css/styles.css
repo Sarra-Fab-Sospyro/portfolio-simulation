@@ -6,9 +6,16 @@
     font-family: serif;
 }
 
+html,
 body {
+    font-size: 16px;
+    height: 100%;
+}
 
+body {
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header styles */
@@ -18,8 +25,9 @@ header nav {
     position: fixed;
     z-index: 1;
     top: 0;
-    padding: 1rem;
+    padding: 0.3rem;
     width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header ul {
@@ -34,7 +42,7 @@ ul li {
 
 li img {
     height: auto;
-    width: 200px;
+    width: 12.5rem;
     border-radius: 20%;
 }
 
@@ -55,38 +63,58 @@ li a:active {
 
 /* Main styles */
 main {
-    margin-top: 19rem;
+    margin-top: 13.5rem; /* Spazio per il header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: calc(100vh - 13.5rem); /* Altezza della finestra meno l'altezza del header */
 }
 
 #aboutMe {
     display: grid;
-    margin: 2rem auto;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    gap: .5rem;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.5rem;
     align-items: center;
     justify-items: center;
     background-color: #ac5e49;
+    padding: 1rem;
+    max-height: 100%; 
 }
 
+/* Aggiungi padding per il contenuto principale */
 #aboutMe p {
     width: 100%;
     background-color: #f4f1de;
-    padding: 2.5rem;
-    border: 1px solid #f4f1de;
+    padding: 3rem;
+    margin-left: 5rem; 
+    border: 2px solid #e07a5f;
     border-radius: 20px;
     white-space: pre-line;
-    line-height: 1.5;
-    font-size: 1.7rem;
-    align-self: center;
-    color: #E07A5F;
-    margin: 2rem;
+    line-height: 1.7;
+    font-size: 1.6rem;
+    font-family: 'Georgia', serif;
+    color: #3d405b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    letter-spacing: 0.02rem;
+}
+
+#aboutMe p strong {
+    font-size: 1.8rem;
+    color: #e07a5f;
+}
+
+#aboutMe p em {
+    color: #81b29a;
+    font-style: italic;
 }
 
 #aboutMe img {
-    width: 40%;
+    width: 50%;
     height: auto;
-    border: 2px solid #ac5e49;
+    border: 2px solid #f4f1de;
     border-radius: 5%;
 }
 
