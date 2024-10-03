@@ -16,6 +16,7 @@ body {
     background-color: #f4f1de;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header styles */
@@ -46,18 +47,19 @@ li img {
     border-radius: 20%;
 }
 
-li a {
+li  {
     color: #8A3219;
     text-decoration: none;
     transition: letter-spacing 0.3s ease;
+    cursor: pointer;
 }
 
-li a:hover {
+li:hover {
     text-decoration: underline;
     letter-spacing: .3rem;
 }
 
-li a:active {
+li:active {
     color: #ac5e49;
 }
 
@@ -69,6 +71,10 @@ main {
     justify-content: center;
     flex-grow: 1;
     height: calc(100vh - 13.5rem);
+}
+
+#container{
+    max-height: 100vh;
 }
 
 #aboutMe {
