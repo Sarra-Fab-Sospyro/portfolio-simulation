@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^([a-zA-Z0-9]+)$ index00.html?path=$1
+RewriteRule ^([a-zA-Z0-9]+)$ index.html?path=$1

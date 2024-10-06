@@ -1,15 +1,18 @@
 /* Global styles */
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     scroll-behavior: smooth;
-    font-family: serif;
+    
 }
 
 html,
 body {
     font-size: 16px;
     height: 100%;
+    font-family: serif;
 }
 
 body {
@@ -20,7 +23,6 @@ body {
 }
 
 /* Header styles */
-
 header nav {
     background-color: #F4F1DE;
     position: fixed;
@@ -41,25 +43,25 @@ ul li {
     display: inline-flex;
 }
 
-li img {
+header li img {
     height: auto;
     width: 12.5rem;
     border-radius: 20%;
 }
 
-li  {
+header li {
     color: #8A3219;
     text-decoration: none;
     transition: letter-spacing 0.3s ease;
     cursor: pointer;
 }
 
-li:hover {
+header li:hover {
     text-decoration: underline;
     letter-spacing: .3rem;
 }
 
-li:active {
+header li:active {
     color: #ac5e49;
 }
 
@@ -73,7 +75,7 @@ main {
     height: calc(100vh - 13.5rem);
 }
 
-#container{
+#container {
     max-height: 100vh;
 }
 
@@ -89,7 +91,7 @@ main {
     max-height: 100%;
 }
 
-/* Aggiungi padding per il contenuto principale */
+/* About content padding */
 #aboutMe p {
     width: 100%;
     background-color: #f4f1de;
@@ -138,8 +140,96 @@ main {
     border-radius: 5%;
 }
 
+/* Home  content*/
+#about {
+    position: relative;
+    width: 20rem;
+    background: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0,.5)), url("/templates/photos/AI\ portrait.png");
+    background-size: cover; /* Cambia da contain a cover */
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 10rem;
+    color: #F4F1DE;
+    align-content: flex-end;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* Carousel styles */
+.carousel {
+    width: 60vw;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.carousel>ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+}
+
+.slide>img,
+.slide #about {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button:focus {
+    outline: 1px solid #111;
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 1rem;
+}
+
+
 /* Footer styles */
-footer{
+footer {
     text-align: center;
     color: #8A3219;
     opacity: 0.8;
