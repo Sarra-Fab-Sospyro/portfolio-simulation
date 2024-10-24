@@ -19,6 +19,7 @@ body {
     background-color: #f4f1de;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     min-height: 100vh;
 }
 
@@ -31,6 +32,7 @@ header nav {
     padding: 0.25rem;
     /* Ridotto per un header più snello */
     width: 100%;
+    height: auto;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -66,23 +68,23 @@ header li:active {
 
 header li img {
     height: auto;
-    width: 12.5rem;
+    width: 10rem;
     border-radius: 20%;
 }
 
 /* Main styles */
 main {
-    margin-top: 4rem;
+    margin-top: 10.5rem;
     /* Aggiornato per compensare l'header */
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 /* Container styles */
 #container {
-    max-height: calc(100vh - 4rem);
+    max-height: 100vh;
     /* Aggiornato per tenere conto dell'header */
     overflow: auto;
     /* Consente lo scorrimento se necessario */
@@ -93,25 +95,25 @@ main {
 /* About content padding */
 #aboutMe {
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 3.5fr 1fr;
+    grid-template-rows: 2fr;
+    grid-template-columns: 2fr 1fr;
     gap: 0.5rem;
     align-items: center;
     justify-items: center;
     background-color: #ac5e49;
     padding: 0.5rem;
-    max-height: 20rem;
+    height: 75vh;
 }
 
 #aboutMe p {
     width: 100%;
     background-color: #f4f1de;
-    padding: 3rem;
+    padding: 2rem;
     border: 2px solid #8A3219;
     border-radius: 20px;
     white-space: pre-line;
-    line-height: 1.7;
-    font-size: 1.6rem;
+    line-height: 1.25;
+    font-size: 1.3rem;
     font-family: 'Georgia', serif;
     color: #3d405b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -130,7 +132,7 @@ main {
 }
 
 #aboutMe p strong {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #8A3219;
 }
 
@@ -339,6 +341,118 @@ footer {
     opacity: 0.8;
     margin-top: 2rem;
     /* Questo garantisce che il footer sia spinto in fondo */
-    padding: 0.1rem 0;
+    margin: 0rem 0 1rem 0;
     /* Aggiungi padding per spazio interno */
+}
+
+
+
+/* Tablet devices (768px and below) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    header li {
+        font-size: 0.9rem;
+    }
+    
+    header li>img{
+        height: 15%;
+    } 
+
+    #aboutMe {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 1rem;
+    }
+
+    #aboutMe img {
+        width: 70%;
+    }
+
+    .carousel {
+        width: 80vw;
+        height: 40vh;
+    }
+
+    .not-found-container h1 {
+        font-size: 8rem;
+    }
+
+    #about,
+    #photography,
+    #stories,
+    #sport-articles {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-size: 5rem;
+        color: #F4F1DE;
+        align-content: flex-end;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    header ul {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0.5rem;
+    }
+
+    header li {
+        font-size: 0.8rem;
+    }
+
+    header li img {
+        width: 5rem;
+    }
+
+    #aboutMe p {
+        font-size: 1.1rem;
+    }
+
+    #aboutMe img {
+        width: 90%;
+    }
+
+    .carousel {
+        width: 100vw;
+        height: 30vh;
+    }
+
+    .not-found-container h1 {
+        font-size: 6rem;
+    }
+}
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+
+    #aboutMe img {
+        width: 40%;
+    }
+
+    .carousel {
+        width: 70vw;
+        height: 60vh;
+    }
 }
