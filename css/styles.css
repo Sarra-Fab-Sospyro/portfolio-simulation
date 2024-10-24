@@ -4,8 +4,8 @@
 *::after {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
-    
 }
 
 html,
@@ -28,7 +28,8 @@ header nav {
     position: fixed;
     z-index: 1;
     top: 0;
-    padding: 0.5rem;
+    padding: 0.25rem;
+    /* Ridotto per un header più snello */
     width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -37,10 +38,30 @@ header ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    /* Mantieni l'allineamento centrale */
 }
 
 ul li {
     display: inline-flex;
+}
+
+header li {
+    color: #8A3219;
+    text-decoration: none;
+    transition: letter-spacing 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    /* Puoi regolare questa dimensione */
+}
+
+header li:hover {
+    text-decoration: underline;
+    letter-spacing: .2rem;
+    /* Mantenuto più compatto */
+}
+
+header li:active {
+    color: #ac5e49;
 }
 
 header li img {
@@ -49,54 +70,43 @@ header li img {
     border-radius: 20%;
 }
 
-header li {
-    color: #8A3219;
-    text-decoration: none;
-    transition: letter-spacing 0.3s ease;
-    cursor: pointer;
-}
-
-header li:hover {
-    text-decoration: underline;
-    letter-spacing: .3rem;
-}
-
-header li:active {
-    color: #ac5e49;
-}
-
 /* Main styles */
 main {
-    margin-top: 13.5rem;
+    margin-top: 4rem;
+    /* Aggiornato per compensare l'header */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    height: calc(100vh - 13.5rem);
 }
 
+/* Container styles */
 #container {
-    max-height: 100vh;
+    max-height: calc(100vh - 4rem);
+    /* Aggiornato per tenere conto dell'header */
+    overflow: auto;
+    /* Consente lo scorrimento se necessario */
+    width: 100%;
+    /* Assicurati che il contenitore occupi l'intera larghezza */
 }
 
+/* About content padding */
 #aboutMe {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3.5fr 1fr;
     gap: 0.5rem;
     align-items: center;
     justify-items: center;
     background-color: #ac5e49;
-    padding: 1rem;
-    max-height: 100%;
+    padding: 0.5rem;
+    max-height: 20rem;
 }
 
-/* About content padding */
 #aboutMe p {
     width: 100%;
     background-color: #f4f1de;
     padding: 3rem;
-    margin-left: 5rem;
     border: 2px solid #8A3219;
     border-radius: 20px;
     white-space: pre-line;
@@ -109,6 +119,16 @@ main {
     letter-spacing: 0.02rem;
 }
 
+/* Mantieni l'immagine all'interno della griglia */
+#aboutMe img {
+    width: 50%;
+    /* Cambiato per riempire meglio lo spazio */
+    height: auto;
+    /* Mantiene le proporzioni */
+    border: 2px solid #f4f1de;
+    border-radius: 5%;
+}
+
 #aboutMe p strong {
     font-size: 1.8rem;
     color: #8A3219;
@@ -119,6 +139,7 @@ main {
     font-weight: 700;
     font-style: italic;
     text-decoration: none;
+    cursor: pointer;
 }
 
 #aboutMe p em a:hover {
@@ -133,19 +154,15 @@ main {
     text-decoration: underline;
 }
 
-#aboutMe img {
-    width: 50%;
-    height: auto;
-    border: 2px solid #f4f1de;
-    border-radius: 5%;
-}
-
-/* Home  content*/
-#about {
+/* Home content */
+#about,
+#photography,
+#stories,
+#sport-articles {
     position: relative;
-    width: 20rem;
-    background: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0,.5)), url("/templates/photos/AI\ portrait.png");
-    background-size: cover; /* Cambia da contain a cover */
+    width: 100%;
+    height: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     font-size: 10rem;
@@ -155,6 +172,21 @@ main {
     cursor: pointer;
 }
 
+#about {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("/templates/emily/Emily01av.avif");
+}
+
+#photography {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("/templates/photos/AI portrait.png");
+}
+
+#stories {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("/templates/stories/stories.webp");
+}
+
+#sport-articles {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("/templates/articles/newspaper.webp");
+}
 
 /* Carousel styles */
 .carousel {
@@ -227,11 +259,86 @@ main {
     right: 1rem;
 }
 
+/* 404 page styles */
+.not-found-container {
+    color: #8A3219;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.not-found-container h1 {
+    font-size: 12rem;
+    font-weight: 700;
+}
+
+.not-found-container h3 {
+    margin-top: .5rem;
+    letter-spacing: .2rem;
+}
+
+.not-found-container a {
+    text-decoration: none;
+    color: #3b705c;
+    margin-top: .5rem;
+}
+
+.mainbox {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.err {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    left: 20%;
+    top: 8%;
+}
+
+.far {
+    font-size: 8.5rem;
+    left: 42%;
+    top: 15%;
+}
+
+.err2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    left: 68%;
+    top: 8%;
+}
+
+.back-home:hover {
+    color: #098050;
+}
+
+.back-home:active {
+    color: #002b1a;
+}
+
+.fa {
+    --fa-animation-duration: 1.55s;
+}
+
+.back-home i {
+    transition: transform 0.3s ease;
+    /* Smooth transition */
+}
 
 /* Footer styles */
 footer {
     text-align: center;
     color: #8A3219;
     opacity: 0.8;
-    margin-bottom: 0.2rem;
+    margin-top: 2rem;
+    /* Questo garantisce che il footer sia spinto in fondo */
+    padding: 0.1rem 0;
+    /* Aggiungi padding per spazio interno */
 }
