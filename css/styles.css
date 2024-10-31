@@ -29,48 +29,82 @@ header nav {
     position: fixed;
     z-index: 1;
     top: 0;
-    padding: 0.25rem;
-    /* Ridotto per un header più snello */
     width: 100%;
-    height: auto;
+    padding: 0.25rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-header ul {
+.menu {
     display: flex;
     justify-content: space-around;
+    /* Centra il contenuto */
     align-items: center;
-    /* Mantieni l'allineamento centrale */
+    width: 100%;
+    max-width: 1000px;
+    list-style: none;
+    /* Rimuove i punti */
+    margin: 0 auto;
+    /* Centra la navbar */
+    padding: 0;
 }
 
-ul li {
-    display: inline-flex;
-}
-
-header li {
+.menu li {
     color: #8A3219;
-    text-decoration: none;
-    transition: letter-spacing 0.3s ease;
-    cursor: pointer;
     font-size: 1rem;
-    /* Puoi regolare questa dimensione */
+    cursor: pointer;
+    transition: letter-spacing 0.3s ease;
+    list-style: none;
+    /* Rimuove i punti per ogni <li> */
 }
 
-header li:hover {
+
+.menu li:hover {
     text-decoration: underline;
-    letter-spacing: .2rem;
-    /* Mantenuto più compatto */
+    letter-spacing: 0.2rem;
 }
 
-header li:active {
-    color: #ac5e49;
+.menu li:active {
+    color: #5f1b08;
 }
 
-header li img {
+.menu li img {
     height: auto;
     width: 10rem;
     border-radius: 20%;
 }
+
+.sidebar-menu {
+    display: none;
+}
+
+#menu-toggle {
+    margin: 1rem 0 0 1rem;
+    background-color: transparent;
+    /* Colore di sfondo trasparente */
+    border: none;
+    /* Nessun bordo */
+    color: #8A3219;
+    /* Colore del testo (puoi cambiarlo a tuo piacimento) */
+    font-size: 24px;
+    /* Dimensione dell'icona */
+    cursor: pointer;
+    /* Cambia il cursore quando passa sopra il pulsante */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Animazioni per il background e la trasformazione */
+}
+
+#menu-toggle:hover {
+    background-color: rgba(138, 50, 25, 0.1);
+    /* Colore di sfondo al passaggio del mouse */
+    transform: scale(1.2);
+    /* Leggera ingrandimento al passaggio del mouse */
+}
+
+#menu-toggle:focus {
+    outline: none;
+    /* Rimuove l'effetto di contorno quando il pulsante è attivato */
+}
+
 
 /* Main styles */
 main {
@@ -105,7 +139,8 @@ main {
     height: 75vh;
 }
 
-#aboutMe p {
+#aboutMe p,
+p {
     width: 100%;
     background-color: #f4f1de;
     padding: 2rem;
@@ -113,12 +148,16 @@ main {
     border-radius: 20px;
     white-space: pre-line;
     line-height: 1.25;
-    font-size: 1.3rem;
-    font-family: 'Georgia', serif;
     color: #3d405b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
     letter-spacing: 0.02rem;
+}
+
+details,
+p {
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
 }
 
 /* Mantieni l'immagine all'interno della griglia */
@@ -261,6 +300,38 @@ main {
     right: 1rem;
 }
 
+/* hOne style */
+
+.hOne {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    font-style: italic;
+    color: #098050;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.2rem;
+
+}
+
+/*  sports-articles  style*/
+summary {
+    cursor: pointer;
+}
+
+summary:hover {
+    color: #8A3219;
+}
+
+article {
+    text-align: center;
+    margin: 1rem 3rem;
+}
+
+#Articles p {
+    padding: 5rem;
+    font-size: 1rem;
+}
+
 /* 404 page styles */
 .not-found-container {
     color: #8A3219;
@@ -351,20 +422,50 @@ footer {
 @media (max-width: 768px) {
     body {
         font-size: 14px;
+        justify-content: space-between;
     }
 
-    header ul {
+    main {
+        margin-top: 1rem;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    /* Mostra la sidebar dropdown */
+    .sidebar-menu {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #F4F1DE;
+        z-index: 10;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    /* Visualizza la sidebar quando è attiva */
+    .sidebar-menu.active {
+        display: block;
+        transform: translateX(0);
+    }
+
+    /* Stili per gli elementi della sidebar */
+    .sidebar-menu ul {
         flex-direction: column;
-        justify-content: center;
+        align-items: start;
+        padding: 1rem;
     }
 
-    header li {
-        font-size: 0.9rem;
+    .sidebar-menu ul li {
+        padding: 1rem;
+        font-size: 1.2rem;
+        color: #8A3219;
     }
-    
-    header li>img{
-        height: 15%;
-    } 
 
     #aboutMe {
         grid-template-columns: 1fr;
@@ -407,12 +508,6 @@ footer {
 @media (max-width: 480px) {
     body {
         font-size: 12px;
-    }
-
-    header ul {
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 0.5rem;
     }
 
     header li {
