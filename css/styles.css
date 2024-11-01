@@ -48,7 +48,7 @@ header nav {
     padding: 0;
 }
 
-.menu li {
+.menu li, .link {
     color: #8A3219;
     font-size: 1rem;
     cursor: pointer;
@@ -58,12 +58,12 @@ header nav {
 }
 
 
-.menu li:hover {
+.menu li:hover, .link:hover {
     text-decoration: underline;
     letter-spacing: 0.2rem;
 }
 
-.menu li:active {
+.menu li:active, .link:active{
     color: #5f1b08;
 }
 
@@ -332,6 +332,12 @@ article {
     font-size: 1rem;
 }
 
+/* stories style */
+.stories {
+
+    text-align: center;
+}
+
 /* 404 page styles */
 .not-found-container {
     color: #8A3219;
@@ -403,6 +409,19 @@ article {
 .back-home i {
     transition: transform 0.3s ease;
     /* Smooth transition */
+}
+
+
+/* contact style */
+
+#contact {
+    margin: 2rem;
+}
+
+#contact ul {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
 }
 
 /* Footer styles */
@@ -501,6 +520,9 @@ footer {
         align-content: flex-end;
         text-align: center;
         cursor: pointer;
+    }
+    #contact ul{
+        flex-direction: column;
     }
 }
 
